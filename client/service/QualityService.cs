@@ -35,7 +35,7 @@ namespace FrsSDK.client.service
             return HttpUtils.ResponseToObj<FaceQualityResult>(response);
         }
 
-        public FaceQualityResult FaceQualityByFace64(string imageBase64)
+        public FaceQualityResult FaceQualityByBase64(string imageBase64)
         {
             return FaceQuality(imageBase64, ImageType.BASE64);
         }
