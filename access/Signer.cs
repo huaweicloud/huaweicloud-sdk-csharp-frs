@@ -11,7 +11,7 @@ namespace FrsSDK.access
 
         public static void Sign(HttpWebRequest request, byte[] content, string ak, string sk)
         {
-            request.Headers.Add("Host", request.Host);
+            //request.Headers.Add("Host", request.Host);
             string date = DateTime.UtcNow.ToString("yyyyMMddTHHmmssZ");
             request.Headers.Add("X-Sdk-Date", date);
             string authInfo = CalculateAuthInfo(request, content, ak, sk, date);

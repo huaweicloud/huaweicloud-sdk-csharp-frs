@@ -2,6 +2,7 @@
 using FrsSDK.access;
 using FrsSDK.client.param;
 using FrsSDK.client.service;
+using FrsSDK.client.service.v2;
 
 namespace FrsSDK.client
 {
@@ -15,6 +16,8 @@ namespace FrsSDK.client
         private LiveDetectService liveDetectService;
         private QualityService qualityService;
         private SearchService searchService;
+
+        private ApiCollectionV2 apiCollectionV2;
 
         public FrsClient(AuthInfo authInfo, String projectId)
         {
@@ -37,6 +40,8 @@ namespace FrsSDK.client
             this.liveDetectService = new LiveDetectService(accessService, projectId);
             this.qualityService = new QualityService(accessService, projectId);
             this.searchService = new SearchService(accessService, projectId);
+
+            this.apiCollectionV2 = new ApiCollectionV2(accessService, projectId);
         }
 
         public CompareService GetCompareService()
@@ -72,6 +77,11 @@ namespace FrsSDK.client
         public SearchService GetSearchService()
         {
             return this.searchService;
+        }
+
+        public ApiCollectionV2 GetV2()
+        {
+            return this.apiCollectionV2;
         }
 
     }
