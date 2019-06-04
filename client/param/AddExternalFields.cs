@@ -22,5 +22,10 @@ namespace FrsSDK.client.param
             return HttpUtils.ObjToString(prop);
         }
 
+        public Dictionary<string, object> GetValue()
+        {
+            return prop;
+        }
+
     }
 }
