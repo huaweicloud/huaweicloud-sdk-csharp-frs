@@ -46,11 +46,11 @@ namespace FrsSDK.client.service
             }
             if (null != searchSort)
             {
-                jsonObj.Add("sort", searchSort.GetString());
+                jsonObj.Add("sort", searchSort.GetValue());
             }
             if (null != searchReturnFields)
             {
-                jsonObj.Add("return_fields", searchReturnFields.GetString());
+                jsonObj.Add("return_fields", searchReturnFields.GetValue());
             }
             if (null != filter)
             {
@@ -128,12 +128,12 @@ namespace FrsSDK.client.service
             //search sort
             if (null != searchSort)
             {
-                multipart.WriteProperty("sort", searchSort.GetString());
+                multipart.WriteProperty("sort", searchSort.GetValue());
             }
             //return fields
             if (null != searchReturnFields)
             {
-                multipart.WriteProperty("return_fields", searchReturnFields.GetString());
+                multipart.WriteProperty("return_fields", searchReturnFields.GetValue());
             }
             //filter
             if (null != filter)
