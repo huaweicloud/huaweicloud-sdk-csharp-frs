@@ -27,6 +27,7 @@ namespace FrsSDK.access
         public HttpWebResponse Get(string url)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
             HttpWebRequest request = WebRequest.CreateHttp(authInfo.EndPoint + url);
             request.Method = "GET";
             return Access(request, null);
@@ -35,6 +36,7 @@ namespace FrsSDK.access
         public HttpWebResponse Post(string url, Dictionary<string, string> headers, byte[] content, string contentType)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
             HttpWebRequest request = WebRequest.CreateHttp(authInfo.EndPoint + url);
             request.Method = "POST";
             //request.Headers.Add("Content-Type", contentType);
@@ -52,6 +54,7 @@ namespace FrsSDK.access
         public HttpWebResponse Delete(string url)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
             HttpWebRequest request = WebRequest.CreateHttp(authInfo.EndPoint + url);
             request.Method = "DELETE";
             return Access(request, null);
