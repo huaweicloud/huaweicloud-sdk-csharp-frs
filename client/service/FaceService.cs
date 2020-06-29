@@ -98,7 +98,7 @@ namespace FrsSDK.client.service
             }
             if (null != addExternalFields)
             {
-                multipart.WriteProperty("external_fields", addExternalFields.GetValue());
+                multipart.WriteProperty("external_fields", addExternalFields.GetString());
             }
             byte[] data = multipart.WriteClose();
             HttpWebResponse response = this.accessService.Post(uri, null, data, multipart.GetContentType());
