@@ -30,7 +30,7 @@ namespace FrsSDK.client.service
             }
             if (null != createExternalFields)
             {
-                jsonObj.Add("external_fields", createExternalFields.GetString());
+                jsonObj.Add("external_fields", createExternalFields.GetValue());
             }
             HttpWebResponse response = accessService.Post(uri, null, HttpUtils.ObjToData(jsonObj), FrsConstantV2.TYPE_JSON);
             return HttpUtils.ResponseToObj<CreateFaceSetResult>(response);
