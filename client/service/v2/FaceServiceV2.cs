@@ -38,7 +38,7 @@ namespace FrsSDK.client.service
             }
             if (null != addExternalFields)
             {
-                jsonObj.Add("external_fields", addExternalFields.GetString());
+                jsonObj.Add("external_fields", addExternalFields.GetValue());
             }
             HttpWebResponse response = accessService.Post(uri, null, HttpUtils.ObjToData(jsonObj), FrsConstantV2.TYPE_JSON);
             return HttpUtils.ResponseToObj<AddFaceResult>(response);
@@ -98,7 +98,7 @@ namespace FrsSDK.client.service
             }
             if (null != addExternalFields)
             {
-                multipart.WriteProperty("external_fields", addExternalFields.GetString());
+                multipart.WriteProperty("external_fields", addExternalFields.GetValue());
             }
             byte[] data = multipart.WriteClose();
             HttpWebResponse response = this.accessService.Post(uri, null, data, multipart.GetContentType());
