@@ -128,12 +128,12 @@ namespace FrsSDK.client.service
             //search sort
             if (null != searchSort)
             {
-                multipart.WriteProperty("sort", searchSort.GetValue());
+                multipart.WriteProperty("sort", searchSort.GetString());
             }
             //return fields
             if (null != searchReturnFields)
             {
-                multipart.WriteProperty("return_fields", searchReturnFields.GetValue());
+                multipart.WriteProperty("return_fields", searchReturnFields.GetString());
             }
             //filter
             if (null != filter)
