@@ -9,13 +9,11 @@ namespace FrsSDK.access
     public class AccessService
     {
         private readonly AuthInfo authInfo;
-        private readonly WebClient webClient;
         private readonly WebProxy proxy;
 
         public AccessService(client.param.AuthInfo authInfo)
         {
             this.authInfo = authInfo;
-            webClient = new WebClient();
         }
 
         public AccessService(AuthInfo authInfo, ProxyHostInfo proxyHostInfo)
